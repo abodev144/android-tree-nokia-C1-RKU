@@ -18,6 +18,11 @@ $(call inherit-product, device/hmd/RKU/device.mk)
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp,adb
 
+# HACK: Set vendor patch level and enable Treble
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.build.security_patch=2099-12-31 \
+    ro.treble.enabled=true
+
 PRODUCT_DEVICE := RKU
 PRODUCT_NAME := omni_RKU
 PRODUCT_BRAND := Nokia
